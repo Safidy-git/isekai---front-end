@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/publication.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+
+    <!-- MENU MOBILE -->
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+
+    <!-- OVERLAY MOBILE -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+
+    <div class="layout">
+
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+
+            <div class="sidebar-header">
+                <h3>Isekai</h3>
+
+                <button class="close-sidebar" id="closeSidebar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+
+            <nav class="sidebar-menu">
+
+
+                <!-- PUBLICATION -->
+                <a href="publication.html" class="active">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>Publier</span>
+                </a>
+
+
+                <!-- STORY -->
+                <a href="story.html">
+                    <i class="fa-solid fa-circle-play"></i>
+                    <span>Story</span>
+                </a>
+
+
+
+                <!-- MODIFIER -->
+                <a href="modifier_publication.html">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>Modifier publication</span>
+                </a>
+                <a href="home.html">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Retour</span>
+                </a>
+
+               
+                
+
+
+            </nav>
+
+
+        </aside>
+
+
+
+
+
+
+        <!-- TON CONTENU EXISTANT -->
+        <main class="content">
+
+
+            <div class="post-container">
+
+
+                <!-- HEADER -->
+                <div class="post-header">
+                    <h2>Nouvelle publication</h2>
+
+                    <span class="close-btn" onclick="window.location.href='home.html'">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+
+                </div>
+
+
+
+                <div class="user-info">
+
+                    <img id="userPhoto" src="" alt="">
+
+                    <div class="user-meta">
+
+                        <strong id="userName"></strong>
+
+                        
+
+                    </div>
+
+                </div>
+
+
+
+
+                <textarea id="content" placeholder="Exprime-toi..."></textarea>
+
+
+
+
+                <div class="location-box">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <input 
+                    type="text" 
+                    id="location"
+                    placeholder="Ajouter un lieu">
+
+                </div>
+
+
+
+
+                <div class="image-preview" id="imagePreview">
+
+
+                    <div class="preview-placeholder">
+
+                        <i class="fa-regular fa-image"></i>
+
+                        <span>Aucune image</span>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="actions">
+
+
+                    <label class="upload-btn">
+
+                        <i class="fa-solid fa-image"></i>
+
+                        Image
+
+                        <input type="file" id="image" hidden>
+
+                    </label>
+
+
+
+
+                    <button id="publishBtn" disabled>
+                        Publier
+                    </button>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </main>
+
+
+
+    </div>
+
+
+
+
+    <div id="toast" class="toast"></div>
+
+
+    <script src="assets/js/profile/publication.js"></script>
+
+    <script src="assets/js/publication/script.js"></script>
+
+
+</body>
+</html>

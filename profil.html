@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F3F1FB">
+    <title>Isekai - Profil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <button class="back-btn" onclick="home_redirection()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h1 class="header-title">Profil</h1>
+    </header>
+
+    <!-- PROFILE COVER -->
+    <div class="profile-cover"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="profile-container">
+        <!-- PROFILE HEADER -->
+        <section class="profile-header">
+            <div class="profile-image-wrapper">
+                <img class="profile-image" id="photoProfil" src="" alt="Photo de profil" style="cursor: pointer;">
+            </div>
+
+            <div class="profile-info">
+                <div class="profile-top">
+                    <div>
+                        <h2 class="profile-name" id="nom"></h2>
+                        <p class="profile-handle">@ <span id="nom_complet"></span></p>
+                    </div>
+                    <button id="redirection" onclick="redirectionn()" class="btn-edit-profile">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                </div>
+                <p class="profile-bio" id="bio">Votre description s'affiche ici</p>
+
+                <div class="profile-stats">
+                    <div class="stat">
+                        <span class="stat-value" id="postsCount">0</span>
+                        <span class="stat-label">Posts</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="followersCount">0</span>
+                        <span class="stat-label">followers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="followingCount">0</span>
+                        <span class="stat-label">Suivis</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTION BUTTONS -->
+        <div class="profile-actions">
+            <button class="btn btn-primary" onclick="redirection_publication()" id="addPostBtn">
+                <i class="fa-solid fa-plus"></i>post
+            </button>
+            <button class="btn btn-primary" id="followbtn">
+                <i class="fa-solid fa-user-plus"></i> Suivre
+            </button>
+            <button class="btn btn-secondary" onclick="message_redirection()">
+                <i class="fa-solid fa-message"></i> Message
+            </button>
+   
+        </div>
+
+        <!-- TABS -->
+        <div class="profile-tabs">
+            <button class="tab-btn active" data-tab="posts">
+                <i class="fa-solid fa-image"></i> Posts
+            </button>
+            
+        </div>
+
+        <!-- POSTS GRID -->
+        <section class="posts-grid" id="postsGrid">
+            <div class="post-item" style="--tone:5">
+                <img src="" alt="Post" class="post-image">
+                <div class="post-overlay">
+                    <div class="post-stats">
+                        <span><i class="fa-solid fa-heart"></i> 629</span>
+                        <span><i class="fa-solid fa-comment"></i> 51</span>
+                    </div>
+                </div>
+            </div>
+
+            
+        </section>
+        <div class="post-modal" id="postModal">
+            <div class="instagram-viewer">
+                <button class="close-modal" type="button" aria-label="Fermer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="viewer-header">
+                    <img id="modalProfil" src="" alt="">
+                    <div class="viewer-header-meta">
+                        <strong id="modalPseudo">Utilisateur</strong>
+                        <small id="modalLocation">Localisation</small>
+                    </div>
+                    <button class="viewer-more" type="button" aria-label="Options">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                </div>
+
+                <div class="viewer-image">
+                    <img id="modalImages" src="" alt="">
+                </div>
+
+                <div class="viewer-actions">
+                    <div class="viewer-actions-left">
+                        <span class="action-icon like-icon" id="likeIcon">
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+                        <span class="action-icon" id="commentButton">
+                            <i class="fa-regular fa-comment"></i>
+                        </span>
+
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="viewer-likes">
+                    <b id="modalLikes">0</b> mentions J'aime
+                </div>
+
+                <p class="viewer-description" id="modalDescriptionWrap">
+                    <strong id="modalPseudoInline">Utilisateur</strong>
+                    <span id="modalDescription"></span>
+                </p>
+
+                <div class="viewer-comments-link" id="openComments">
+                    
+                    <b id="modalComments">0</b> commentaires
+                </div>
+                <div id="commentsOverlay"></div>
+                <div class="comments-box" id="commentsBox">
+
+                    <input type="hidden" id="replyCommentId">
+
+                    <div id="commentsContainer"></div>
+
+                    <div class="comment-input">
+                        <input 
+                        type="text" 
+                        id="commentText"
+                        placeholder="Ajouter un commentaire..."
+                        >
+
+                        <button id="sendComment">
+                            Envoyer
+                        </button>
+                    </div>
+
+                </div>
+                <span class="viewer-time" id="timee">Il y a 2 heures</span>
+            </div>
+        </div>
+
+        <!-- SAVED GRID (Hidden by default) -->
+        <section class="posts-grid saved-grid" id="savedGrid" style="display: none;">
+            <div class="post-item" style="--tone:2">
+                <img src="" alt="Post" class="post-image">
+                <div class="post-overlay">
+                    <div class="post-stats">
+                        <span><i class="fa-solid fa-heart"></i> 542</span>
+                        <span><i class="fa-solid fa-comment"></i> 35</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-item" style="--tone:3">
+                <img src="" alt="Post" class="post-image">
+                <div class="post-overlay">
+                    <div class="post-stats">
+                        <span><i class="fa-solid fa-heart"></i> 428</span>
+                        <span><i class="fa-solid fa-comment"></i> 42</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-item" style="--tone:4">
+                <img src="" alt="Post" class="post-image">
+                <div class="post-overlay">
+                    <div class="post-stats">
+                        <span><i class="fa-solid fa-heart"></i> 318</span>
+                        <span><i class="fa-solid fa-comment"></i> 19</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NO MORE POSTS -->
+        <div class="no-more-posts">
+            <p>Vous avez vu tous les posts</p>
+        </div>
+    </main>
+
+    <!-- MODAL POUR AFFICHER LA PHOTO DE PROFIL EN GRAND -->
+    <div class="profile-modal" id="profileModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modalImage" src="" alt="Photo de profil agrandie" class="modal-image">
+        </div>
+    </div>
+
+    
+    <div id="followModal" class="follow-modal">
+        <div class="follow-modal-overlay"></div>
+        <div class="follow-modal-content">
+            <div class="follow-modal-header">
+                <h3 id="followModalTitle">Abonnés</h3>
+                <button id="closeFollowModal" class="close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div id="followList" class="follow-list"></div>
+        </div>
+    </div>
+    <script src="assets/js/profile/popup_pdp.js"></script>
+    <script src="assets/js/profile/script.js">
+        const urlParams = new URLSearchParams(window.location.search);
+        const profileId = urlParams.get("id");
+    </script>
+    <script src="assets/js/profile/commentaire.js"></script>
+    <script src="assets/js/profile/like.js"></script>
+    <script src="assets/js/profile/affichage_publication.js"></script>
+    <script src="assets/js/redirection/redirection.js"></script>
+</body>
+</html>

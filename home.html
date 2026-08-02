@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#F3F1FB">
+    <title>Isekai</title>
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/storyhome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+
+<body>
+
+    
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo"><i class="fa-brands fa-instagram"></i> <span>Isekai   </span></div>
+        
+        <div class="header-actions">
+           <div class="notification-wrapper">
+
+    <button
+        class="icon-btn"
+        onclick="notification_redirection()">
+
+        <i class="fa-regular fa-bell"></i>
+
+    </button>
+
+    <span
+        id="notificationBadge"
+        class="notification-badge">
+
+        0
+
+    </span>
+
+</div>
+            <button class="messagebtn" onclick="redirection_message()">
+                <i class="fa-solid fa-message"></i>
+                <span class="unreadbadge" id="unreadMessageBadge">
+                    1
+                </span>
+            </button>
+            <button class="create-btn" onclick="redirection_publication()"><i class="fa-solid fa-plus"></i> <span>Créer un post</span></button>
+        </div>
+    </header>
+
+    <div class="layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="profile-card">
+                <div ></div>
+                <img class="avatar-large" src="" id="photoProfil" alt="">
+                <h3  id="namm"></h3>
+                <span class="profile-handle"></span>
+                <div class="stats">
+                    <div>
+                        <strong id="homePostsCount">0</strong>
+                        <span>Posts</span>
+                    </div>
+
+                    <div>
+                        <strong id="followersCount">0</strong>
+                        <span>followers</span>
+                    </div>
+
+                    <div>
+                        <strong id="followingCount">0</strong>
+                        <span>Suivis</span>
+                    </div>
+                </div>
+                <p class="bio" id="bio">UI Designer · Voyageur · Blogueur lifestyle</p>
+                <a href="profil.html" class="profil_link">Voir mon profil</a>
+            </div>
+            
+            <nav class="menu">
+                <a href="#" class="active"><i class="fa-solid fa-house"></i> Feed</a>
+                <a href="explorer.html"><i class="fa-solid fa-compass"></i> Explorer</a>
+                
+                <a href="#"><i class="fa-solid fa-gear"></i> Paramètres</a>
+                <button  onclick="logout()" class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion</button>
+            </nav>
+            
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+            <section class="stories-section">
+                <h2>Stories</h2>
+                <div class="stories" id="storiesContainer">
+                </div>
+            </section>
+            <section class="feed-section">
+
+                <h2>Feed</h2>
+
+                <div class="feed" id="feed">
+
+                </div>
+
+            </section>
+        </main>
+
+        <!-- SUGGESTIONS SIDEBAR -->
+        <aside class="suggestions">
+            <div class="suggestions-header">
+                <h3>Suggestions pour vous</h3>
+                <a href="explorer.html">Voir tout</a>
+            </div>
+            <div class="suggestion-list" id="suggestion-list">
+                <div class="suggestion-item">
+
+                    <div class="suggestion-avatar" id="avatar-1"></div>
+
+                    <div class="suggestion-info">
+                        <strong id="name-1"></strong>
+                        <span id="info-1"></span>
+                    </div>
+
+                    <button class="follow-btn" id="follow-btn-1"></button>
+                    
+                </div>
+                                
+                
+            </div>
+        </aside>
+    </div>
+
+    <!-- MOBILE BOTTOM NAV -->
+    <nav class="bottom-nav">
+        <a href="#" class="active"><i class="fa-solid fa-house"></i></a>
+        <a href="explorer.html"><i class="fa-solid fa-compass"></i></a>
+        <a href="publication.html" class="bn-create"><i class="fa-solid fa-plus"></i></a>
+        <a href="profil.html"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    
+
+    <div class="likes-modal" id="likesModal">
+        <div class="likes-box">
+            <div class="likes-header">
+                <h3>J'aime</h3>
+                <button onclick="closeLikes()">✕</button>
+            </div>
+            <div id="likesList"></div>
+        </div>
+    </div>
+    <div class="comments-overlay" id="commentsOverlay"></div>
+
+    <div class="comments-box" id="commentsBox">
+
+        <div class="comments-header">
+
+            <h3>
+                Commentaires
+            </h3>
+
+            <button id="closeComments">
+                X
+            </button>
+
+        </div>
+
+
+        <div 
+        class="comments-container"
+        id="commentsContainer">
+
+        </div>
+
+
+        <div class="comment-form">
+
+            <input 
+            type="text"
+            id="commentText"
+            placeholder="Ajouter un commentaire...">
+
+
+            <button id="sendComment">
+                Envoyer
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="story-modal" id="storyModal">
+
+    <div class="story-modal-content">
+
+        <button
+            class="close-story"
+            id="closeStory"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <div class="story-progress-container">
+
+            <div
+                class="story-progress"
+                id="storyProgress"
+            ></div>
+
+        </div>
+
+
+        <div class="story-user">
+
+            <img
+                id="storyUserPhoto"
+                src=""
+                alt="Photo de profil"
+            >
+
+            <span id="storyUserPseudo"></span>
+
+        </div>
+
+
+        <!-- Navigation story gauche -->
+
+        <button
+            class="story-navigation previous-story"
+            id="previousStory"
+        >
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+
+
+        <!-- Image story -->
+
+        <img
+            id="storyImage"
+            src=""
+            alt="Story"
+            class="story-image"
+        >
+
+
+
+        <!-- Navigation story droite -->
+
+        <button
+            class="story-navigation next-story"
+            id="nextStory"
+        >
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+
+
+        <p
+            id="storyText"
+            class="story-text"
+        ></p>
+
+        <div class="story-actions">
+
+
+            <div id="storyViewerActions">
+
+
+                <button
+                    id="likeStoryButton"
+                    class="like-story-button"
+                >
+
+                    <i class="fa-regular fa-heart"></i>
+
+                </button>
+
+
+
+                <form
+                    id="replyStoryForm"
+                    class="reply-story-form"
+                >
+
+                    <input
+                        type="text"
+                        id="replyStoryInput"
+                        placeholder="Répondre à cette story..."
+                        autocomplete="off"
+                    >
+
+
+                    <button type="submit">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+
+
+            <div
+                id="storyOwnerViews"
+                style="display:none;"
+            >
+
+
+                <button
+                    id="storyViewsButton"
+                    class="story-views-button"
+                >
+
+                    <i class="fa-solid fa-eye"></i>
+
+
+                    <span id="storyViewsCount">
+                        0 vue
+                    </span>
+
+
+                </button>
+                <button
+                    id="deleteStoryButton"
+                    class="delete-story-button"
+                >
+
+                    <i class="fa-solid fa-trash"></i>
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+    <div 
+    class="story-viewers-modal"
+    id="storyViewersModal"
+>
+
+    <div class="story-viewers-box">
+
+        <div class="story-viewers-header">
+
+            <h3>
+                Vues de la story
+            </h3>
+
+            <button id="closeStoryViewers">
+                ✕
+            </button>
+
+        </div>
+
+
+        <div 
+            id="storyViewersList"
+            class="story-viewers-list"
+        >
+
+        </div>
+
+    </div>
+
+</div>
+    <script src="assets/js/home/stories.js"></script>
+    <script src="assets/js/home/script.js"></script>
+    <script src="assets/js/home/feed.js"></script>
+    <script src="assets/js/home/commentaire.js"></script>
+    <script src="assets/js/redirection/redirection.js"></script>
+    <script src="assets/js/home/notif.js"></script>
+    <!-- <script src="assets/js/message/message.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/publication.css">
+    <link rel="stylesheet" href="assets/css/modifier_publication.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+
+    <!-- MENU MOBILE -->
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+
+    <!-- OVERLAY MOBILE -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+
+    <div class="layout">
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+
+        <div class="sidebar-header">
+            <h3>Isekai</h3>
+
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+
+            <a href="publication.html">
+                <i class="fa-solid fa-pen"></i>
+                <span>Publier</span>
+            </a>
+
+
+            <a href="story.html">
+                <i class="fa-solid fa-circle-play"></i>
+                <span>Story</span>
+            </a>
+
+
+            <a href="modifier-publication.html" class="active">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <span>Modifier publication</span>
+            </a>
+            <a href="home.html">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Retour</span>
+            </a>
+
+
+        </nav>
+
+
+    </aside>
+
+
+
+
+
+    <!-- CONTENU -->
+
+    <main class="content">
+
+
+        <section class="my-posts">
+
+
+            <h1>
+                Mes publications
+            </h1>
+
+
+
+            <div id="postsContainer">
+
+                <!-- publications injectées ici -->
+
+            </div>
+
+
+
+        </section>
+
+
+    </main>
+
+
+
+</div>
+
+
+
+    
+
+
+    <!-- MODAL MODIFICATION -->
+
+<div class="edit-modal" id="editModal">
+
+
+    <div class="edit-box">
+
+
+        <button class="close-modal" id="closeModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+
+        <h2>
+            Modifier publication
+        </h2>
+
+
+
+        <textarea id="editContent"></textarea>
+
+
+
+        <label for="lieu"></label>
+        <input 
+        type="text"
+        id="editLocation"
+        placeholder="Lieu">
+
+
+
+        
+
+
+
+
+        <button id="saveEdit">
+
+            Enregistrer
+
+        </button>
+
+
+
+    </div>
+
+    
+
+</div>
+<div class="delete-modal" id="deleteModal">
+        <div class="delete-box">
+            <div class="delete-icon">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+            <h2>
+                Supprimer la publication ?
+            </h2>
+            <p>
+                Cette action est définitive.
+                Vous ne pourrez pas récupérer cette publication.
+            </p>
+            <div class="delete-actions">
+                <button 
+                id="cancelDelete">
+                    Annuler
+                </button>
+                <button 
+                id="confirmDelete">
+                    Supprimer
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/publication/script.js"></script>
+    <script src="assets/js/publication/affichage.js"></script>
+
+</body>
+</html>

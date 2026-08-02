@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isekai - Modifier le profil</title>
+
+    <link rel="stylesheet" href="assets/css/modifier_profile.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+
+        <main class="main-content">
+            <div class="settings-container">
+
+                <aside class="settings-tabs">
+                    <h2>Paramètres</h2>
+                    <ul>
+                        <li class="tab-active">
+                            <a href="#profil" class="tab-link">
+                                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6"/></svg>
+                                Modifier le profil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#securite" class="tab-link">
+                                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6l7-3z"/></svg>
+                                Sécurité du compte
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#notifications" class="tab-link">
+                                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9a6 6 0 0 1 12 0c0 4 1.4 5.4 2 6H4c.6-.6 2-2 2-6z"/><path d="M9.5 18.5a2.5 2.5 0 0 0 5 0"/></svg>
+                                Notifications
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#aide" class="tab-link">
+                                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.3c.3-1.2 1.3-2 2.6-2 1.4 0 2.6 1 2.6 2.2 0 1.5-2.6 1.7-2.6 3.7"/><circle cx="12" cy="16.8" r="0.4" fill="currentColor" stroke="none"/></svg>
+                                Aide
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+
+                <section class="form-section" id="profil">
+                    <h3>Modifier le profil</h3>
+
+                    
+
+                    <form class="edit-profile-form">
+
+                        <div class="profile-photo-row">
+                            <div class="avatar-container">
+                                <img src=""  alt="Photo de profil" id="profile-preview">
+                            </div>
+                            <div class="photo-actions">
+                                <span class="username" id="user_name">safidy_rakoto</span>
+                                <label for="file-upload" class="btn-change-photo">Changer la photo de profil</label>
+                                <input type="file" id="file-upload" accept="image/*" class="visually-hidden">
+                                <span class="photo-hint">JPG ou PNG. 5 Mo maximum.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <div class="input-container">
+                                <input type="text" id="name" name="name" >
+                                <small class="input-help">Aidez les gens à découvrir votre compte en utilisant le nom sous lequel vous êtes connu(e).</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Prenom</label>
+                            <div class="input-container">
+                                <input type="text" id="surname" name="prename" >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username-input">Nom d'utilisateur</label>
+                            <div class="input-container">
+                                <input type="text" id="username-input" name="username" value="safidy_rakoto" autocomplete="off">
+                                <small class="input-help">Dans la plupart des cas, vous pourrez réutiliser votre nom d'utilisateur initial pendant encore 14 jours.</small>
+                            </div>
+                        </div>
+
+                       
+
+                        <div class="form-group">
+                            <label for="bio">Bio</label>
+                            <div class="input-container">
+                                <textarea id="bio" name="bio" rows="3" maxlength="150" placeholder="Parlez-nous de vous..."></textarea>
+                                <small class="input-help">150 caractères maximum.</small>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="reset" class="btn-secondary">Annuler</button>
+                            <button type="submit" class="btn-submit">Enregistrer les modifications</button>
+                        </div>
+
+                    </form>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Popup : Sécurité du compte -->
+    <div class="modal-overlay" id="securite">
+        <a href="#profil" class="modal-backdrop" aria-label="Fermer"></a>
+        <div class="modal" role="dialog" aria-labelledby="modal-securite-title">
+            <div class="modal-header">
+                <h4 id="modal-securite-title">Sécurité du compte</h4>
+                <a href="#profil" class="modal-close" aria-label="Fermer">&times;</a>
+            </div>
+
+            <div class="modal-row">
+                <div class="modal-row-text">
+                    <strong>Mot de passe</strong>
+                    <span>Dernière modification il y a 3 mois.</span>
+                </div>
+                <a href="#" class="modal-link-btn">Modifier</a>
+            </div>
+
+            <div class="modal-row">
+                <div class="modal-row-text">
+                    <strong>Double authentification</strong>
+                    <span>Ajoutez une étape de vérification à la connexion.</span>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-2fa">
+                    <span class="switch-track" aria-hidden="true"></span>
+                </label>
+            </div>
+
+            <div class="modal-row">
+                <div class="modal-row-text">
+                    <strong>Sessions actives</strong>
+                    <span>1 appareil actuellement connecté à ce compte.</span>
+                </div>
+                <a href="#" class="modal-link-btn">Voir</a>
+            </div>
+
+            <div class="modal-row">
+                <div class="modal-row-text">
+                    <strong>Alertes de connexion</strong>
+                    <span>Recevez un message en cas de connexion inhabituelle.</span>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-alerts" checked>
+                    <span class="switch-track" aria-hidden="true"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup : Aide -->
+    <div class="modal-overlay" id="aide">
+        <a href="#profil" class="modal-backdrop" aria-label="Fermer"></a>
+        <div class="modal" role="dialog" aria-labelledby="modal-aide-title">
+            <div class="modal-header">
+                <h4 id="modal-aide-title">Aide</h4>
+                <a href="#profil" class="modal-close" aria-label="Fermer">&times;</a>
+            </div>
+
+            <input type="text" class="help-search" placeholder="Rechercher dans l'aide…" aria-label="Rechercher dans l'aide">
+
+            <ul class="help-list">
+                <li>
+                    <details>
+                        <summary>Comment changer ma photo de profil ?</summary>
+                        <p>Ouvrez « Modifier le profil », puis cliquez sur « Changer la photo de profil » pour choisir une nouvelle image depuis votre appareil.</p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Pourquoi mon nom d'utilisateur est-il refusé ?</summary>
+                        <p>Un nom d'utilisateur déjà utilisé par un autre compte ne peut pas être repris. Essayez une variante ou ajoutez un chiffre.</p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Comment sécuriser mon compte ?</summary>
+                        <p>Activez la double authentification depuis l'onglet « Sécurité du compte » pour ajouter une étape de vérification à la connexion.</p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Comment supprimer mon compte ?</summary>
+                        <p>Cette option se trouve dans les paramètres avancés du compte. Contactez le support si vous ne la trouvez pas.</p>
+                    </details>
+                </li>
+            </ul>
+
+            <div class="help-contact">
+                <a href="#" class="modal-link-btn modal-link-btn--filled">Contacter le support</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/profile/update_profile.js"></script>
+</body>
+</html>

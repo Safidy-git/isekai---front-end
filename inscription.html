@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+
+    <link rel="stylesheet" href="assets/css/inscription.css">
+    <link rel="stylesheet" href="assets/fontawesome-free-6.6.0-web/css/all.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="card">
+
+        <!-- LEFT SIDE -->
+        <div class="left">
+
+            <div class="overlay"></div>
+
+            <img src="assets/image/intro-ezgif.com-gif-maker (1).gif" alt="illustration">
+
+            <!-- STORIES + MESSAGE STYLE -->
+
+            <div class="story-block block1">
+                <div class="story">
+                    <img src="assets/image/Social Media Frame Portrait Prompt.jfif">
+                </div>
+                <div class="story-text">
+                    <span class="name">Emma</span>
+                    <span class="msg">vient de s’inscrire</span>
+                </div>
+            </div>
+
+            <div class="story-block block3">
+                <div class="story">
+                    <img src="assets/image/Айдентика и фирменный стиль для бренда одежды _ логотип.jfif">
+                </div>
+                <div class="story-text">
+                    <span class="name">Noah</span>
+                    <span class="msg">a rejoint la plateforme</span>
+                </div>
+            </div>
+
+            <div class="story-block block4">
+                <div class="story">
+                    <img src="assets/image/Айдентика и фирменный стиль для бренда одежды _ логотип.jfif">
+                </div>
+                <div class="story-text">
+                    <span class="name">Mia</span>
+                    <span class="msg">a créé un compte</span>
+                </div>
+            </div>
+
+            <!-- NOTIFICATIONS FLOTTANTES -->
+            <div class="float-notif notif1">
+                <i class="fa-solid fa-bell"></i> Nouveau membre
+            </div>
+
+            <div class="float-notif notif3">
+                <i class="fa-solid fa-user-plus"></i> Invitation reçue
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right">
+
+            <div class="top-text">
+                <p>Déjà inscrit ? <a href="index.html">Se connecter</a></p>
+            </div>
+
+            <h1>Crée ton compte </h1>
+            <p class="subtitle">Rejoins la communauté en quelques secondes</p>
+
+           <form id="multiStepForm">
+
+                <!-- ================= STEP 1 ================= -->
+                <div class="form-step active">
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="nom" placeholder="Nom">
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="prenom" placeholder="Prénom">
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-user-tag"></i>
+                        <input type="text" id="pseudo" placeholder="Nom d'utilisateur">
+                    </div>
+
+                    <button type="button" class="btn next-btn">Suivant</button>
+
+                </div>
+
+                <!-- ================= STEP 2 ================= -->
+                <div class="form-step">
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Email">
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" id="telephone" placeholder="Téléphone">
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-calendar"></i>
+                        <input type="date" id="date_naissance">
+                    </div>
+
+                    <div class="buttons">
+                        <button type="button" class="btn-secondary prev-btn">Précédent</button>
+                        <button type="button" class="btn next-btn">Suivant</button>
+                    </div>
+
+                </div>
+
+                <!-- ================= STEP 3 ================= -->
+                <div class="form-step">
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" placeholder="Mot de passe">
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="confirm_password" placeholder="Confirmer mot de passe">
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-venus-mars"></i>
+                        <select id="sexe">
+                            <option value="">Sexe</option>
+                            <option>Homme</option>
+                            <option>Femme</option>
+                            <option>Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-globe"></i>
+                        <select id="nationalite">
+                            <option value="">Nationalité</option>
+                            <option>Malagasy</option>
+                            <option>Française</option>
+                            <option>Canadienne</option>
+                            <option>Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="buttons">
+                        <button type="button" class="btn-secondary prev-btn">Précédent</button>
+                        <button type="submit" class="btn">Créer mon compte</button>
+                    </div>
+
+                </div>
+                
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <script src="assets/js/inscription/step.js"></script>
+</body>
+</html>

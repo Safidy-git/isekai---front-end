@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Messages - Isekai</title>
+    <link
+        rel="stylesheet"
+        href="assets/css/message.css"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+<body>
+    <main class="messaging-container">
+        <section class="conversations-panel">
+            <header class="conversations-header">
+                <div class="messages-title">
+                    <button
+                        class="home-btn"
+                        id="homeBtn"
+                        title="Retour à l'accueil"
+                    >
+                        <i
+                            class="fa-solid fa-arrow-left"
+                        ></i>
+                    </button>
+
+
+                <h1>
+                    Messages
+                </h1>
+            </div>
+
+            <button
+                class="new-message-btn"
+                title="Nouveau message"
+                id="newMessageBtn"
+            >
+                <i
+                    class="fa-regular fa-pen-to-square"
+                ></i>
+            </button>
+        </header>
+
+        <div class="conversation-search">
+            <i
+                class="fa-solid fa-magnifying-glass"
+            ></i>
+
+            <input
+                type="text"
+                placeholder="Rechercher"
+                id="conversationSearch"
+            >
+        </div>
+
+        <div
+            class="conversations-list"
+            id="conversationsList"
+        >
+        </div>
+    </section>
+
+    <section class="chat-panel">
+        <header class="chat-header">
+            <div class="chat-user">
+                <img
+                    src="assets/image/intro-ezgif.com-gif-maker (1).gif"
+                    alt="Photo de profil"
+                >
+
+                <div>
+                    <strong>
+                        Sélectionnez une conversation
+                    </strong>
+
+                    <span>
+                        Commencez une discussion
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <div
+            class="messages-container"
+            id="messagesContainer"
+        >
+            <div class="empty-chat">
+                <i
+                    class="fa-regular fa-comments"
+                ></i>
+
+                <h2>
+                    Vos messages
+                </h2>
+
+                <p>
+                    Sélectionnez une conversation
+                    pour commencer à discuter.
+                </p>
+            </div>
+        </div>
+
+        <div class="message-input-wrapper">
+
+            <div
+                id="imagePreview"
+                class="image-preview"
+            >
+            </div>
+
+            <div class="message-input-container">
+
+                
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Écrire un message..."
+                >
+
+                <button
+                    class="image-btn"
+                    id="imageBtn"
+                    type="button"
+                >
+                    <i
+                        class="fa-regular fa-image"
+                    ></i>
+                </button>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    hidden
+                >
+
+                <button
+                    class="send-btn"
+                    id="sendMessageBtn"
+                    type="button"
+                >
+                    <i
+                        class="fa-solid fa-paper-plane"
+                    ></i>
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<div
+    class="new-message-modal"
+    id="newMessageModal"
+>
+    <div class="new-message-box">
+
+        <div class="new-message-header">
+
+            <h2>
+                Nouveau message
+            </h2>
+
+            <button
+                id="closeNewMessage"
+                type="button"
+            >
+                <i
+                    class="fa-solid fa-xmark"
+                ></i>
+            </button>
+
+        </div>
+
+        <div class="new-message-search">
+
+            <i
+                class="fa-solid fa-magnifying-glass"
+            ></i>
+
+            <input
+                type="text"
+                id="followingSearch"
+                placeholder="Rechercher un utilisateur..."
+            >
+
+        </div>
+
+        <div
+            class="following-list"
+            id="followingList"
+        >
+        </div>
+
+    </div>
+</div>
+
+<script
+    src="assets/js/message/message.js"
+></script>
+<script
+    src="assets/js/message/messageImage.js"
+></script>
+
+
+
+</body>
+</html>

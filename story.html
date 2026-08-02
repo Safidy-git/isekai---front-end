@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/publication.css">
+    <link rel="stylesheet" href="assets/css/modifier_publication.css">
+    <link rel="stylesheet" href="assets/css/story.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Isekai</h3>
+                <button class="close-sidebar" id="closeSidebar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="publication.html">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>Publier</span>
+                </a>
+                <a href="story.html" class="active">
+                    <i class="fa-solid fa-circle-play"></i>
+                    <span>Story</span>
+                </a>
+                <a href="modifier_publication.html">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>Modifier publication</span>
+                </a>
+                <a href="home.html">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Retour</span>
+                </a>
+            </nav>
+        </aside>
+        <main class="story-page">
+            <section class="story-create-card">
+                <div class="story-header">
+                    <div>
+                        <span class="story-label">ISEKAI STORY</span>
+                        <h1>Créer une story</h1>
+                        <p>Partagez un moment avec vos abonnés.</p>
+                    </div>
+                    <div class="story-icon">
+                        <i class="fa-solid fa-circle-play"></i>
+                    </div>
+                </div>
+                <form id="storyForm">
+                    <label for="storyImage" class="image-upload">
+                        <div id="uploadPlaceholder">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <strong>Ajouter une image</strong>
+                            <span>PNG, JPG, JPEG, GIF, JFIF ou AVIF</span>
+                        </div>
+                        <img id="storyPreview" src="" alt="Aperçu de la story">
+                    </label>
+                    <input type="file" id="storyImage" accept="image/*,.jfif,.avif" hidden>
+                    <div class="story-text-container">
+                        <label for="storyText">Texte de la story <span>(optionnel)</span></label>
+                        <textarea id="storyText" placeholder="Ajoutez un texte à votre story..."></textarea>
+                    </div>
+                    <button type="submit" class="publish-story-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Publier la story
+                    </button>
+                    <p id="storyMessage"></p>
+                </form>
+            </section>
+            <section class="story-preview-card">
+                <div class="preview-header">
+                    <h2>Aperçu</h2>
+                    <span>24H</span>
+                </div>
+                <div class="story-preview">
+                    <div id="emptyPreview">
+                        <i class="fa-solid fa-image"></i>
+                        <p>Votre story apparaîtra ici</p>
+                    </div>
+                    <img id="largeStoryPreview" src="" alt="Aperçu de la story">
+                    <p id="previewText"></p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="assets/js/publication/script.js"></script>
+    <script src="assets/js/publication/affichage.js"></script>
+    <script src="assets/js/publication/story.js"></script>
+</body>
+</html>

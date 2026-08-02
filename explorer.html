@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta  name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>Explorer</title>
+    <link 
+    rel="stylesheet" 
+    href="assets/css/explorer.css">
+    <link 
+    rel="stylesheet" 
+    href="assets/fontawesome-free-6.6.0-web/css/all.css">
+
+</head>
+
+<body>
+
+    <div class="explorer-page">
+
+        <header class="explorer-header">
+
+            <div class="explorer-brand">
+
+                <a href="home.html">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </a>
+
+                <h1>
+                    Explorer
+                </h1>
+
+            </div>
+
+            <div class="explorer-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input 
+                type="search"
+                id="searchInput"
+                placeholder="Rechercher une personne ou une publication">
+
+                <button 
+                id="clearSearch"
+                class="clear-search">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <main class="explorer-content">
+
+
+            <div class="search-tabs">
+
+                <button 
+                class="search-tab active"
+                data-type="all">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    Tout
+
+                </button>
+
+                <button 
+                class="search-tab"
+                data-type="users">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Personnes
+
+                </button>
+
+                <button 
+                class="search-tab"
+                data-type="posts">
+
+                    <i class="fa-solid fa-image"></i>
+
+                    Publications
+
+                </button>
+
+            </div>
+
+
+            <section 
+            class="explorer-results"
+            id="explorerResults">
+
+
+                <div class="explorer-intro">
+
+                    <div class="intro-icon">
+
+                        <i class="fa-solid fa-compass"></i>
+
+                    </div>
+
+                    <h2>
+                        Découvre de nouvelles personnes
+                    </h2>
+
+                    <p>
+                        Recherche des personnes ou explore les publications de la communauté.
+                    </p>
+
+                </div>
+
+
+                <section class="explorer-section">
+
+                    <div class="section-heading">
+
+                        <h2>
+                            Suggestions pour toi
+                        </h2>
+
+                        <span>
+                            Découvre de nouveaux profils
+                        </span>
+
+                    </div>
+
+
+                    <div 
+                    class="explorer-users"
+                    id="explorerSuggestions">
+
+
+                        <article class="explorer-user-card">
+
+                            <div class="explorer-user-avatar">
+
+                                <img 
+                                src="default.png"
+                                alt="Profil">
+
+                            </div>
+
+                            <strong>
+                                Exemple
+                            </strong>
+
+                            <span>
+                                @exemple
+                            </span>
+
+                            <button>
+                                Voir le profil
+                            </button>
+
+                        </article>
+
+
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <div 
+            class="search-loading"
+            id="searchLoading">
+
+                <i class="fa-solid fa-spinner"></i>
+
+                <span>
+                    Recherche en cours...
+                </span>
+
+            </div>
+
+
+            <div 
+            class="search-empty"
+            id="searchEmpty">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <h2>
+                    Aucun résultat
+                </h2>
+
+                <p>
+                    Essaie avec un autre mot-clé.
+                </p>
+
+            </div>
+
+
+        </main>
+
+
+        
+
+    </div>
+
+
+    <script src="assets/js/explorer/explorer.js"></script>
+
+</body>
+
+</html>
