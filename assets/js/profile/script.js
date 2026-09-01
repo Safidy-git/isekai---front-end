@@ -214,27 +214,47 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-async function loadPostsCount(profileId) {
+async function loadPostsCount(){
 
-    try {
-
-        const response = await fetch(
-            `https://isekai-bfq3.onrender.com/api/posts/count/${profileId}`
+    const user =
+        JSON.parse(
+            localStorage.getItem("user")
         );
 
-        if (!response.ok) {
-            throw new Error("Erreur API : " + response.status);
+
+    if(!user){
+        return;
+    }
+
+
+    try{
+
+        const response =
+            await fetch(
+                `https://isekai-bfq3.onrender.com/api/posts/count/${user.id}`
+            );
+
+
+        const data =
+            await response.json();
+
+
+        const postsCount =
+            document.getElementById(
+                "postsCount"
+            );
+
+
+        if(postsCount){
+
+            postsCount.textContent =
+                data.totalPosts;
+
         }
 
-        const data = await response.json();
 
-        const postsCount = document.getElementById("postsCount");
-
-        if (postsCount) {
-            postsCount.textContent = data.totalPosts;
-        }
-
-    } catch (error) {
+    }
+    catch(error){
 
         console.error(
             "Erreur chargement nombre posts :",
@@ -242,4 +262,5 @@ async function loadPostsCount(profileId) {
         );
 
     }
+
 }
