@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const response = await fetch(
 
-            `http://localhost:3000/api/users/search?q=${encodeURIComponent(search)}`
+            `https://isekai-bfq3.onrender.com/api/users/search?q=${encodeURIComponent(search)}`
 
         );
 
@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             const imgSrc =
                             u.photo_profil
                             ?
-                            `http://localhost:3000/uploads/profile/${u.photo_profil}`
+                            `https://isekai-bfq3.onrender.com/uploads/profile/${u.photo_profil}`
                             :
                             "default.png";
 
@@ -474,7 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             const profileImg =
                             post.photo_profil
                             ?
-                            `http://localhost:3000/uploads/profile/${post.photo_profil}`
+                            `https://isekai-bfq3.onrender.com/uploads/profile/${post.photo_profil}`
                             :
                             "default.png";
 
@@ -492,7 +492,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                                         <img
                                         class="explorer-post-image"
-                                        src="http://localhost:3000/uploads/posts/${post.image}"
+                                        src="https://isekai-bfq3.onrender.com/uploads/posts/${post.image}"
                                         alt="Publication">
 
                                         `
@@ -613,7 +613,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 const imgSrc =
                                 u.photo_profil
                                 ?
-                                `http://localhost:3000/uploads/profile/${u.photo_profil}`
+                                `https://isekai-bfq3.onrender.com/uploads/profile/${u.photo_profil}`
                                 :
                                 "default.png";
 
@@ -726,7 +726,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                                             <img
                                             class="explorer-post-image"
-                                            src="http://localhost:3000/uploads/posts/${post.image}"
+                                            src="https://isekai-bfq3.onrender.com/uploads/posts/${post.image}"
                                             alt="Publication">
 
                                             `
@@ -748,7 +748,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                                 src="${
                                                     post.photo_profil
                                                     ?
-                                                    "http://localhost:3000/uploads/profile/" + post.photo_profil
+                                                    "https://isekai-bfq3.onrender.com/uploads/profile/" + post.photo_profil
                                                     :
                                                     "default.png"
                                                 }"
@@ -846,7 +846,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             const imgSrc =
                             u.photo_profil
                             ?
-                            `http://localhost:3000/uploads/profile/${u.photo_profil}`
+                            `https://isekai-bfq3.onrender.com/uploads/profile/${u.photo_profil}`
                             :
                             "default.png";
 
